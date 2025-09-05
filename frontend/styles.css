@@ -1,18 +1,47 @@
+/*--- Design System Variables ---*/
+:root{
+  --font: 'Montserrat', sans-serif;
+  --primary-color: #1e4a8a;
+  --secondary-color: #1958a6;
+  --accent-color: #2dade4;
+  --background-color: #f0f4f8;
+  --text-color: #333333;
+  --button-bg-color: #1958a6;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #ffffff;
+  --button-hover-text-color: #1958a6;
+}
+
+/*--- Global Styles ---*/
 body{
-  font-family: Montserrat, sans-serif;
+  font-family: var(--font);
   margin: 0;
   padding: 0;
-  background-color: #2dade4;
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 header{
-  background-color: #1e4a8a;
+  background-color: var(--primary-color);
   padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+}
+
+main{
+  padding: 150px 20px 20px 20px;
+  min-height: calc(100vh - 140px);
+}
+
+footer{
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .navigation {
@@ -34,9 +63,9 @@ header{
 }
 
 .custom-button {
-  background-color: #1958a6;
-  color: white;
-  border: 2px solid white;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 2px solid var(--button-text-color);
   padding: 12px 30px;
   font-size:12px;
   font-weight: bold;
@@ -46,9 +75,9 @@ header{
 }
 
 .custom-button:hover {
-  background-color: white;
-  color: #1958a6;
-  border: 2px solid #1958a6;
+  background-color: var(--button-hover-bg-color);
+  color: var(--button-hover-text-color);
+  border: 2px solid var(--button-hover-text-color);
 }
 
 .logo-frame {
@@ -79,4 +108,20 @@ header{
   margin: 10px auto;
   max-width: 100%;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overview-container {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.overview-header {
+  background: var(--primary-color);
+  text-align: center;
+  padding: 5px;
+  color: white;
 }
