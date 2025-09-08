@@ -89,6 +89,14 @@ main {
   display: block;
 }
 
+.banner-logo {
+  max-width: 30%;          
+  height: auto;   
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #1958a6;     
+  display: block;
+  margin: 0 auto;       
+}
 .content-container {
   background: var(--background-color);
   border-radius: 20px;
