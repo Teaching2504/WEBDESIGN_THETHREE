@@ -4,12 +4,13 @@
   --primary-color: #1e4a8a;
   --secondary-color: #1958a6;
   --accent-color: #2dade4;
-  --background-color: #f0f4f8;
+  --background-color: #2dade4;
   --text-color: #000000;
   --button-bg-color: #1958a6;
   --button-text-color: #ffffff;
   --button-hover-bg-color: #ffffff;
   --button-hover-text-color: #1958a6;
+  --content-container-background-color: #ffffff;
 }
 
 /*--- Global Layout ---*/
@@ -77,6 +78,7 @@ main {
   gap: 40px;
 }
 
+/* Banner Image */
 .banner {
   width: 100%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -97,8 +99,9 @@ main {
   display: block;
   margin: 0 auto;       
 }
+/* Content Container */
 .content-container {
-  background: var(--background-color);
+  background: var(--content-container-background-color);
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 75%;
@@ -123,10 +126,162 @@ main {
 .content-container-content h2{
   color: var(--primary-color);
 }
+
+.content-container-content p {
+  line-height: 1.6;
+}
+
+/* Content Images */
 .content-image{
   width: 100%;
   border-radius: 25px;
 }
+
+/* Statistic Cards*/
+.stat-card {
+  background: var(--content-container-background-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  text-align: center;
+  width: 50%;
+  margin: 10px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card__number {
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.stat-card__label {
+  color: var(--text-color);
+}
+
+/* Info Cards */
+.info-card {
+  background: var(--content-container-background-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-table .info-card {
+  min-height: 50em;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+  gap: 20px;
+}
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #1e4a8a;
+  border-radius: 2px;
+}
+
+
+.timeline-item {
+  display: contents;
+}
+
+.timeline-content {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content-left {
+  grid-column: 1 / 2;
+}
+
+.timeline-content-right {
+  grid-column: 3 / 4;
+}
+
+.timeline-image {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.timeline-image-left{
+  grid-column: 1 / 2;
+}
+
+.timeline-image-right{
+  grid-column: 3 / 4;
+}
+
+.timeline-date {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--button-text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+
+.timeline-event {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin: 0;
+  font-weight: 600;
+}
+
+.timeline-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
 /* Footer Layout */
 footer {
   background-color: var(--primary-color);
@@ -141,7 +296,7 @@ footer {
   color: var(--button-text-color);
   border: 2px solid var(--button-text-color);
   padding: 12px 30px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
