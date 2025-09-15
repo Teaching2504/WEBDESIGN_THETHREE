@@ -57,20 +57,33 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  position: relative;
 }
+
 .navigation ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  gap: 20px;
+  display: none; /* ẩn mặc định */
+  position: relative;
+  background: var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 8px;
+  min-width: 200px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 1100;
 }
-.navigation li a {
+
+.navigation ul.show {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 28px;
   color: white;
-  text-decoration: none;
-  font-weight: 500;
+  cursor: pointer;
 }
 
 /* Main Layout */
@@ -226,13 +239,8 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-table .info-card {
-  min-height: 50em;
-}
-.info-table2 {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
+.info-table {
+  flex-wrap: wrap;
 }
 .info-card2 {
   background: var(--content-container-background-color);
@@ -244,8 +252,8 @@ main {
   text-align: center;
   box-shadow: 0 8px 200px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 200px;
-  aspect-ratio: 2 / 3; /* cao : rộng */
+  width: 300px;
+  aspect-ratio: 2 / 3;
   min-height: 25em;
 }
 .info-card2:hover {
@@ -258,19 +266,19 @@ main {
   color: var(--primary-color);
 }
 .info-card2 .avatar img {
-  width: 40%;              /* chiếm 1/5 = 20% chiều rộng của card */
-  aspect-ratio: 1 / 1;     /* giữ tỉ lệ vuông */
+  width: 40%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
 }
 .info-card2 h3 a {
   color: var(--primary-color);
-  text-decoration: none; /* bỏ gạch dưới */
+  text-decoration: none;
 }
 
 .info-card2 h3 a:hover {
-  text-decoration: underline; /* hover có gạch dưới */
+  text-decoration: underline;
 }
 
 .info-card:hover {
@@ -637,15 +645,21 @@ main {
 }
 /* Buttons */
 .custom-button {
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: 2px solid var(--button-text-color);
   padding: 12px 30px;
-  font-size: 0.75rem;
+  font-size: 1em;
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; 
 }
 
 .custom-button:hover {
@@ -655,7 +669,7 @@ main {
 }
 
 .gradient-button {
-  margin: -15px;
+  margin: 15px;
   font-family: var(--font);
   color: var(--button-text-color);
   padding: 10px 20px;
