@@ -641,7 +641,7 @@ main {
   padding: 12px 30px;
   font-size: 1em;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   text-align: center;
