@@ -56,20 +56,33 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  position: relative;
 }
+
 .navigation ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  gap: 20px;
+  display: none; /* ẩn mặc định */
+  position: relative;
+  background: var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 8px;
+  min-width: 200px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  z-index: 1100;
 }
-.navigation li a {
+
+.navigation ul.show {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-toggle {
+  display: block;
+  font-size: 28px;
   color: white;
-  text-decoration: none;
-  font-weight: 500;
+  cursor: pointer;
 }
 
 /* Main Layout */
@@ -619,15 +632,21 @@ main {
 
 /* Buttons */
 .custom-button {
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   border: 2px solid var(--button-text-color);
   padding: 12px 30px;
-  font-size: 0.75rem;
+  font-size: 1em;
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; 
 }
 
 .custom-button:hover {
@@ -691,5 +710,24 @@ main {
 
   .content-container-content .split-text {
     flex-direction: row;
+  }
+
+  .navigation ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: 20px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+  .custom-button {
+    width: auto;
+    text-align: center;
+    padding: 8px 12px;
   }
 }

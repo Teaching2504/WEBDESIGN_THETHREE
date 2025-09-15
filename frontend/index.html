@@ -7,7 +7,6 @@
 	<title>Trang Chủ</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles.css">
-  <script src="scripts.js"></script>
 </head>
 <body>
 	<header>
@@ -15,20 +14,21 @@
       CHÀO MỪNG KỶ NIỆM 35 NĂM NGÀY THÀNH LẬP TRƯỜNG ĐẠI HỌC MỞ THÀNH PHỐ HỒ CHÍ MINH (15/06/1990 - 15/06/2025)
     </div>
     <div class="navigation">
-    <div class="logo-frame">
-      <a href="https://ou.edu.vn/">
-      <img src="assets/logo.png" alt="Logo">
-      </a>
+      <div class="logo-frame">
+        <a href="https://ou.edu.vn/">
+          <img src="assets/logo.png" alt="Logo">
+        </a>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul id="nav-links">
+        <li><button class="custom-button" onclick="window.location.href='index.html'">Trang chủ</button></li>
+        <li><button class="custom-button" onclick="window.location.href='achievement.html'">Thành tựu nổi bật</button></li>
+        <li><button class="custom-button" onclick="window.location.href='webandpage.html'">Website & Fanpage</button></li>
+        <li><button class="custom-button" onclick="window.location.href='guestbook.html'">Góc cảm nhận</button></li>
+        <li><button class="custom-button" onclick="window.location.href='team.html'">Đội ngũ thực hiện</button></li>
+      </ul>
     </div>
-		<ul>
-      <li><button class="custom-button" onclick="window.location.href='index.html'">Trang chủ</button></li>
-      <li><button class="custom-button" onclick="window.location.href='achievement.html'">Thành tựu nổi bật</button></li>
-      <li><button class="custom-button" onclick="window.location.href='webandpage.html'">Website & Fanpage</button></li>
-      <li><button class="custom-button" onclick="window.location.href='guestbook.html'">Góc cảm nhận</button></li>
-      <li><button class="custom-button" onclick="window.location.href='team.html'">Đội ngũ thực hiện</button></li>
-    </ul>
-    </div>
-	</header>
+  </header>
 	<main>
     <div class="banner">
       <img src="assets/TrangChu/banner.png" alt="Banner Image" class="banner-image">
@@ -186,5 +186,6 @@
       </div>
     </div>
 	</footer>
+  <script src="scripts.js"></script>
 </body>
 </html>
