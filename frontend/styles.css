@@ -222,13 +222,8 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-table .info-card {
-  min-height: 50em;
-}
-.info-table2 {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
+.info-table {
+  flex-wrap: wrap;
 }
 .info-card2 {
   background: var(--content-container-background-color);
@@ -240,8 +235,8 @@ main {
   text-align: center;
   box-shadow: 0 8px 200px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 200px;
-  aspect-ratio: 2 / 3; /* cao : rộng */
+  width: 300px;
+  aspect-ratio: 2 / 3;
   min-height: 25em;
 }
 .info-card2:hover {
@@ -254,19 +249,19 @@ main {
   color: var(--primary-color);
 }
 .info-card2 .avatar img {
-  width: 40%;              /* chiếm 1/5 = 20% chiều rộng của card */
-  aspect-ratio: 1 / 1;     /* giữ tỉ lệ vuông */
+  width: 40%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
 }
 .info-card2 h3 a {
   color: var(--primary-color);
-  text-decoration: none; /* bỏ gạch dưới */
+  text-decoration: none;
 }
 
 .info-card2 h3 a:hover {
-  text-decoration: underline; /* hover có gạch dưới */
+  text-decoration: underline;
 }
 
 .info-card:hover {
@@ -642,7 +637,7 @@ main {
 }
 
 .gradient-button {
-  margin: -15px;
+  margin: 15px;
   font-family: var(--font);
   color: var(--button-text-color);
   padding: 10px 20px;
