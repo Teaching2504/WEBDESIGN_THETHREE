@@ -5,7 +5,9 @@
   --secondary-color: #1958a6;
   --accent-color: #2dade4;
   --background-color: #2dade4;
+  --background-container-color: #f7fbff;
   --text-color: #000000;
+  --secondary-text-color: #777777;
   --button-bg-color: #1958a6;
   --button-text-color: #ffffff;
   --button-hover-bg-color: #ffffff;
@@ -135,20 +137,6 @@ main {
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;
-}
-
-/* Khi màn hình nhỏ hơn 768px (tablet/điện thoại) */
-@media (max-width: 768px) {
-  .iframe-container {
-    padding-top: 75%; /* đổi thành 4:3 để đỡ cao */
-  }
-}
-
-/* Khi rất nhỏ (điện thoại đứng dọc) */
-@media (max-width: 480px) {
-  .iframe-container {
-    padding-top: 50% /* cho vuông để không quá dài */
-  }
 }
 
 .content-container-header {
@@ -363,6 +351,155 @@ main {
   font-size: 0.95rem;
   line-height: 1.5;
   color: #333;
+}
+
+/* Guestbook Container */
+.guestbook-container {
+  background: var(--background-container-color);
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 75%;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+.guestbook-container-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.guestbook-container-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.guestbook-container-header p {
+  color: var(--text-color);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Form */
+.guestbook-container-form {
+  border: 1px solid var(--accent-color);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: var(--);
+}
+
+.guestbook-container-form h2 {
+  margin: 0;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.guestbook-container-form form {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.guestbook-container-form input,
+.guestbook-container-form select,
+.guestbook-container-form textarea {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--accent-color);
+  font-size: 1rem;
+  font-family: var(--font);
+  transition: border 0.3s;
+}
+
+.guestbook-container-form input:focus,
+.guestbook-container-form select:focus,
+.guestbook-container-form textarea:focus {
+  border: 1px solid var(--primary-color);
+  outline: none;
+}
+
+.guestbook-container-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.guestbook-container-form button {
+  padding: 12px;
+  background: var(--primary-color);
+  color: var(--button-text-color);
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.guestbook-container-form button:hover {
+  background: var(--accent-color);
+}
+
+.guestbook-container-comment .comment {
+  background: var(--background-container-color);
+  border: 1px solid #e0e6f1;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.comment-name {
+  font-weight: bold;
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.comment-subcription{
+  margin: 0;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-subcription p {
+  margin: 0;
+}
+
+.comment-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.comment-footer {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.comment-footer a {
+  padding-left: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.comment-footer a:hover {
+  text-decoration: underline;
 }
 
 /* Footer Layout */
