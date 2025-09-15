@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Hoàng Phi Hùng",
+    "role": "Sinh viên",
+    "company": "Khoa Công nghệ Thông tin",
+    "comment": "Được là sinh viên của Trường Đại học Mở TP.HCM, em vô cùng tự hào và hãnh diện. Nhân dịp kỷ niệm 35 năm thành lập trường, chúc cho trường ngày càng phát triển hơn nữa ạ!",
+    "time": "17:34 02/09/2025"
+  },
+  {
+    "name": "Trần Anh Tuấn",
+    "role": "Sinh viên",
+    "company": "Khoa Đào tạo Đặc biệt",
+    "comment": "Trường Đại học Mở TP.HCM là một môi trường học tập đầy năng động, trường luôn tạo điều kiện cho sinh viên học tập và phát triển. Chúc cho trường ngày càng phát triển hơn nữa ạ.",
+    "time": "20:20 01/09/2025"
+  },
+  {
+    "name": "Nguyễn Hòa Bình",
+    "role": "Sinh viên",
+    "company": "Khoa Tài chính - Ngân hàng",
+    "comment": "Trải qua 2 năm được học tại trường, em cảm nhận được sự nhiệt tình từ giảng viên, sự quan tâm sinh viên từ nhà trường và em có thêm nhiều bạn bè mới. Em chúc cho trường ngày càng thành công.",
+    "time": "21:32 31/08/2025"
+  }
+]
