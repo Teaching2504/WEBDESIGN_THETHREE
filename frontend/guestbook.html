@@ -23,8 +23,8 @@
       <li><button class="custom-button" onclick="window.location.href='index.html'">Trang chủ</button></li>
       <li><button class="custom-button" onclick="window.location.href='achievement.html'">Thành tựu nổi bật</button></li>
       <li><button class="custom-button" onclick="window.location.href='webandpage.html'">Website & Fanpage</button></li>
-      <li><button class="custom-button">Góc cảm nhận</button></li>
-      <li><button class="custom-button">Đội ngũ thực hiện</button></li>
+      <li><button class="custom-button" onclick="window.location.href='guestbook.html'">Góc cảm nhận</button></li>
+      <li><button class="custom-button" onclick="window.location.href='team.html'">Đội ngũ thực hiện</button></li>
     </ul>
     </div>
 	</header>
@@ -33,6 +33,20 @@
       <div class="guestbook-container-header">
         <h2>Sổ Lưu Niệm 35 Năm</h2>
         <p>Chia sẻ những kỷ niệm và lời chúc mừng đến<br>Trường Đại học Mở Thành phố Hồ Chí Minh</p>
+        <div class="guestbook-container-stats">
+          <div class="stat-card">
+            <p class="stat-card-number" id="total-messages">3</p>
+            <p class="stat-card-label">Lời chúc đã gửi</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card-number" id="messages-today">1</p>
+            <p class="stat-card-label">Lời chúc hôm nay</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card-number" id="anniversary-year">35</p>
+            <p class="stat-card-label">Năm kỷ niệm thành lập</p>
+          </div>
+        </div>
       </div>
       <div class="guestbook-container-form">
         <h2>Gửi lời chúc của bạn</h2>
@@ -48,13 +62,11 @@
           <button type="submit">Gửi lời chúc</button>
         </form>
       </div>
-
-      <!-- Lời chúc cộng đồng -->
       <div class="guestbook-container-comment">
         <div class="comment">
           <div class="comment-header">
             <p class="comment-name" id="name">Hoàng Phi Hùng</p>
-            <div class="comment-subcription">
+            <div class="comment-subscription">
               <p id="role-company">Sinh viên - Khoa Công nghệ Thông tin</p>
               <p id="time">17:34 02/09/2025</p>
             </div>
@@ -101,5 +113,49 @@
       </div>
     </div>
 	</footer>
+  <script>
+    async function loadComments() {
+      const container = document.querySelector('.guestbook-container-comment');
+      container.innerHTML = '';
+
+      try {
+        const response = await fetch('comments.json');
+        if (!response.ok) throw new Error("Không thể tải dữ liệu");
+        const comments = await response.json();
+
+        if (!Array.isArray(comments) || comments.length === 0) {
+          container.innerHTML = "<p>Chưa có bình luận nào.</p>";
+          return;
+        }
+
+        comments.forEach(comment => {
+          const commentDiv = document.createElement('div');
+          commentDiv.classList.add('comment');
+
+          commentDiv.innerHTML = `
+            <div class="comment-header">
+              <p class="comment-name">${comment.name}</p>
+              <div class="comment-subscription">
+                <p>${comment.role} - ${comment.company}</p>
+                <p>${comment.time}</p>
+              </div>
+            </div>
+            <p class="comment-text">${comment.comment}</p>
+            <div class="comment-footer">
+              <a href="#">Chỉnh sửa</a> 
+              <a href="#">Xóa</a>
+            </div>
+          `;
+
+          container.appendChild(commentDiv);
+        });
+      } catch (error) {
+        console.error("Không thể tải comment.json:", error);
+        container.innerHTML = '<p>Lỗi tải bình luận.</p>';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadComments);
+  </script>
 </body>
 </html>
