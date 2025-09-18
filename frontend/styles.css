@@ -5,6 +5,7 @@
   --secondary-color: #1958a6;
   --accent-color: #2dade4;
   --background-color: #2dade4;
+  --background-announcement-color: #ffd54f;
   --background-container-color: #f7fbff;
   --text-color: #000000;
   --secondary-text-color: #777777;
@@ -42,7 +43,7 @@ header {
 }
 
 .announcement {
-  background-color: #ffd54f;
+  background-color: var(--background-announcement-color);
   color: var(--primary-color);
   font-weight: bold;
   text-align: center;
@@ -114,7 +115,7 @@ main {
   box-shadow: 8px 8px 0 #1958a6;     
   display: block;
   margin: 0 auto;       
-  cursor: pointer; /* ĐỔI THÀNH NGÓN TRỎ ĐỂ TƯƠNG TÁC */
+  cursor: pointer;
 }
 .banner-logo:hover {
   transform: translateY(-7px);
@@ -123,7 +124,7 @@ main {
 .iframe-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;  /* khung tối đa */
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 56.25%; /* tỷ lệ 16:9 */
   border: 2px solid var(--primary-color) ;
@@ -303,7 +304,7 @@ main {
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: #1e4a8a;
+  background: var(--primary-color);
   border-radius: 2px;
 }
 
@@ -809,12 +810,18 @@ main {
 /* Responsive Design */
 
 /* Tablet */
-@media (min-width: 600px) {
+@media (min-width: 1050px) {
+  .content-container {
+    width: 90%;
+  }
 
+  .content-container-content .split-text {
+    flex-direction: row;
+  }
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1300px) {
   .content-container {
     width: 75%;
   }
