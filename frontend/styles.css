@@ -584,6 +584,12 @@ main {
   gap: 32px;
 }
 
+.footer-container a {
+  color: white;
+  text-decoration: none;
+
+}
+
 .footer-col {
   flex: 1;
   min-width: 200px;
